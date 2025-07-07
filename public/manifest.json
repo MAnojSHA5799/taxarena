@@ -1,0 +1,27 @@
+{
+  "name": "Tax Arena - Professional Tax & Business Solutions",
+  "short_name": "Tax Arena",
+  "description": "Expert GST, Income Tax & Business Services. Comprehensive tax solutions from certified professionals.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#92400e",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/taxarena-logo.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/images/taxarena-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "finance", "productivity"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}
