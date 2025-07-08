@@ -123,12 +123,14 @@ app.post("/api/appointment", async (req, res) => {
       })
     }
 
+    
     // Email content for appointment
     const mailOptions = {
       from: process.env.EMAIL_USER,
       to: "mansingh78605@gmail.com",
       subject: "New Appointment Request - Tax Arena",
       html: `
+
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <div style="background-color: #92400e; color: white; padding: 20px; text-align: center;">
             <h1>Tax Arena - New Appointment Request</h1>
@@ -203,3 +205,4 @@ app.get("/api/health", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`)
 })
+
