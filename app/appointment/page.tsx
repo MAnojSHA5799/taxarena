@@ -68,9 +68,9 @@ export default function AppointmentPage() {
     event.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus({ type: null, message: "" })
-
+// http://localhost:5000
     try {
-      const response = await fetch("http://localhost:5000/api/appointment", {
+      const response = await fetch("https://taxarena.onrender.com/api/appointment", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
