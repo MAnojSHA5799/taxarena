@@ -72,7 +72,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/images/taxarena-logo.jpeg" />
         <meta name="theme-color" content="#92400e" />
         <meta name="msapplication-TileColor" content="#92400e" />
-        <meta name="msapplication-TileImage" href="/images/taxarena-logo.jpeg" />
+       <meta name="msapplication-TileImage" content="/images/taxarena-logo.jpeg" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
