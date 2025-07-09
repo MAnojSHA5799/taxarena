@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu } from "lucide-react"
+import { Menu, ChevronDown } from "lucide-react"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -13,9 +13,14 @@ export function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
     { name: "Appointment", href: "/appointment" },
     { name: "Contact", href: "/contact" },
+  ]
+
+  const serviceItems = [
+    { name: "Accounting & Auditing Services", href: "/services/accounting-auditing-services" },
+    { name: "Compliance & Finance Related Services", href: "/services/compliance-finance-related-services" },
+    { name: "Legal Services", href: "/services/legal-services" },
   ]
 
   return (
@@ -45,6 +50,25 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+
+            {/* Services Dropdown */}
+            <div className="relative group">
+              <button className="flex items-center text-gray-700 hover:text-amber-600 font-medium transition-colors duration-200">
+                Services <ChevronDown className="ml-1 h-8 w-4" />
+              </button>
+              <div className="absolute top-full left-0 bg-white shadow-md rounded-md mt-0 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200 z-50 min-w-[280px]">
+                {serviceItems.map((service) => (
+                  <Link
+                    key={service.name}
+                    href={service.href}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700"
+                  >
+                    {service.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             <Link href="/appointment">
               <Button className="bg-amber-600 hover:bg-amber-700">Book Appointment</Button>
             </Link>
@@ -69,6 +93,21 @@ export function Navbar() {
                     {item.name}
                   </Link>
                 ))}
+
+                <div className="flex flex-col gap-2">
+                  <span className="text-gray-500 font-semibold text-sm mt-4">Services</span>
+                  {serviceItems.map((service) => (
+                    <Link
+                      key={service.name}
+                      href={service.href}
+                      className="text-gray-700 hover:text-amber-600 text-base transition-colors duration-200"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {service.name}
+                    </Link>
+                  ))}
+                </div>
+
                 <Link href="/appointment">
                   <Button className="bg-amber-600 hover:bg-amber-700 mt-4 w-full">Book Appointment</Button>
                 </Link>
